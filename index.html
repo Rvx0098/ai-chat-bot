@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Chatbot</title>
+
+    <!-- ✅ THIS LINE IS CRITICAL -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>College FAQ Chatbot</h1>
+
+    <form method="POST">
+        <input
+            type="text"
+            name="query"
+            placeholder="Ask about admission, fees, hostel..."
+            required
+        >
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+        <div class="card">
+            <strong>Bot:</strong> {{ response }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
